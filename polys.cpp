@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <fstream>
 #include <string>
 
@@ -42,7 +42,8 @@ int main()
             }
         }
 
-    } else { cout << "No file!"; }
+    } 
+    else { cout << "No file with polygs!\n"; }
 
 
     File.close();
@@ -66,15 +67,16 @@ int main()
             treg.calcalte_object();
         }
 
-    } else { cout << "No file!\n"; }
-    
-    ofstream fout("results.txt");
-    fout << "";
+        ofstream fout("results.txt");
+        fout << "";
 
-    for (int i = 0; i < lines.size(); i++) {
-        fout << to_string(treg.report(lines[i])) << "\n";
-        cout << "Line: " << lines[i].start << "-" << lines[i].end << endl << endl;
+        for (int i = 0; i < lines.size(); i++) {
+            fout << to_string(treg.report(lines[i])) << "\n";
+            cout << "Line: " << lines[i].start << "-" << lines[i].end << endl << endl;
+        }
+
+        fout.close();
     }
+    else { cout << "No file with lines!"; }
 
-    fout.close();
 }
