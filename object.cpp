@@ -112,15 +112,15 @@ void swap_costyl(obj_line_vec& a) {
 	}
 }
 
-cls_act object::line_intersection(obj_line_vec& a_, obj_line_vec& b_) {     
-	obj_line_vec a, b;
+cls_act object::line_intersection(obj_line_vec& a, obj_line_vec& b) {     
+	//obj_line_vec a, b;
 
 	obj_point intr{ 0,0 };
 	cls_act action;
 	action.type = NOT;
 
-	a = a_; 
-	b = b_;
+	//a = a_; 
+	//b = b_;
 	
 	if ((a.start.x == b.start.x) && (a.end.x == b.end.x) && (a.start.y == b.start.y) && (a.end.y == b.end.y)) { action.type = OVRL_FULL; return action; }
 	//swap_costyl(a);
@@ -136,7 +136,7 @@ cls_act object::line_intersection(obj_line_vec& a_, obj_line_vec& b_) {
 	double b2 = b.start.x - b.end.x;
 	double c2 = -b.start.x * b.end.y + b.start.y * b.end.x;
 
-	if ( (a1 * b2 == a2 * b1)) // Проверка на параллельность  и наложение
+	if ( (a1 * b2 == a2 * b1)) // ГЏГ°Г®ГўГҐГ°ГЄГ  Г­Г  ГЇГ Г°Г Г«Г«ГҐГ«ГјГ­Г®Г±ГІГј  ГЁ Г­Г Г«Г®Г¦ГҐГ­ГЁГҐ
 	{
 		if (a1 * b2 == b1 * a2 && a1 * c2 == a2 * c1 && b1 * c2 == c1 * b2) 
 		{
