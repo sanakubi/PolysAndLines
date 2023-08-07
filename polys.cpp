@@ -42,7 +42,8 @@ int main()
             }
         }
 
-    }
+    } else { cout << "No file!"; }
+
 
     File.close();
     File.open("polys.txt", ios::in);
@@ -65,8 +66,8 @@ int main()
             treg.calcalte_object();
         }
 
-    }
-
+    } else { cout << "No file!\n"; }
+    
     ofstream fout("results.txt");
     fout << "";
 
